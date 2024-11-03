@@ -2,20 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
+/* src/app/globals.css */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --blur-background: rgba(255, 255, 255, 0.4); /* Blur effect background */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.component {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blur-background);
+  backdrop-filter: blur(10px);
+  transition: opacity 0.5s ease;
+}
+
+.blur-effect {
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+.bg-gradient {
+  background: linear-gradient(120deg, rgba(0, 128, 255, 0.8), rgba(0, 255, 128, 0.8));
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: rgba(0, 128, 255, 0.6);
+}
+
+/*
+ * react-calendar-heatmap styles
+ *
+ * All of the styles in this file are optional and configurable!
+ * The github and gitlab color scales are provided for reference.
+ */
+
+ .react-calendar-heatmap text {
+  font-size: 10px;
+  fill: #aaa;
+}
+
+.react-calendar-heatmap .react-calendar-heatmap-small-text {
+  font-size: 5px;
+}
+
+.react-calendar-heatmap rect:hover {
+  stroke: #555;
+  stroke-width: 1px;
+}
+
+/*
+ * Default color scale
+ */
+
+.react-calendar-heatmap .color-empty {
+  fill: #eeeeee;
+}
+
+.react-calendar-heatmap .color-filled {
+  fill: #8cc665;
+}
+
+/*
+ * Github color scale
+ */
+
+.react-calendar-heatmap .color-github-0 {
+  fill: #eeeeee;
+}
+.react-calendar-heatmap .color-github-1 {
+  fill: #d6e685;
+}
+.react-calendar-heatmap .color-github-2 {
+  fill: #8cc665;
+}
+.react-calendar-heatmap .color-github-3 {
+  fill: #44a340;
+}
+.react-calendar-heatmap .color-github-4 {
+  fill: #1e6823;
 }
