@@ -2,67 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-/* src/app/globals.css */
-:root {
-  --blur-background: rgba(255, 255, 255, 0.4); /* Blur effect background */
-}
-
 html, body {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.component {
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-  min-width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--blur-background);
-  backdrop-filter: blur(10px);
-  transition: opacity 0.5s ease;
+section {
+  @apply min-h-screen w-screen flex flex-col items-center justify-center p-16;
 }
 
-.blur-effect {
-  backdrop-filter: blur(5px);
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
+h2 {
+  @apply text-4xl p-8 text-center;
+}
+
+button {
+  @apply text-base px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-500 ease-in-out;
 }
 
 .bg-gradient {
   background: linear-gradient(120deg, rgba(0, 128, 255, 0.8), rgba(0, 255, 128, 0.8));
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
 }
 
-h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-button {
-  padding: 10px 20px;
-  border-radius: 10px;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: rgba(0, 128, 255, 0.6);
+.component {
+  @apply bg-gradient bg-gradient-to-r from-blue-500 to-green-500 text-white text-4xl text-gray-800;
 }
 
 /*
- * react-calendar-heatmap styles
- *
- * All of the styles in this file are optional and configurable!
- * The github and gitlab color scales are provided for reference.
+ * Article styles
  */
 
+.article-slider {
+  @apply w-full max-w-lg mx-auto overflow-hidden p-6 bg-white/50 shadow-md rounded-lg;
+}
+
+.article-card {
+  @apply flex-shrink-0 w-full p-6 shadow-md rounded-lg bg-transparent transition duration-500;
+}
+
+.article-image {
+  @apply w-full h-24 object-cover rounded mb-4;
+}
+
+.article-title {
+  @apply text-xl font-semibold mb-2;
+}
+
+.article-date {
+  @apply text-sm text-gray-500 mb-2;
+}
+
+.article-text {
+  @apply text-base text-gray-700 mb-2;
+}
+
+.article-link {
+  @apply text-base text-blue-500 hover:underline;
+}
+
+.article-counter {
+  @apply text-sm text-gray-500 mb-2;
+}
+/*
+ * github contributions styles
+ */
+
+ .github-card {
+  @apply w-full overflow-hidden p-6 bg-white/50 shadow-md rounded-lg;
+}
+
+.github-title {
+  @apply text-xl mb-2;
+}
+
  .react-calendar-heatmap text {
-  font-size: 10px;
-  fill: #aaa;
+  font-size: 8px;
+  fill: #000;
 }
 
 .react-calendar-heatmap .react-calendar-heatmap-small-text {
@@ -92,9 +115,11 @@ button:hover {
 
 .react-calendar-heatmap .color-github-0 {
   fill: #eeeeee;
+  opacity: 0.5;
 }
 .react-calendar-heatmap .color-github-1 {
   fill: #d6e685;
+  opacity: 0.5;
 }
 .react-calendar-heatmap .color-github-2 {
   fill: #8cc665;
@@ -104,4 +129,63 @@ button:hover {
 }
 .react-calendar-heatmap .color-github-4 {
   fill: #1e6823;
+}
+
+/* Container for the projects section */
+.projects-container {
+  @apply py-12 px-4 max-w-5xl mx-auto;
+}
+
+/* Grid layout for project cards */
+.project-grid {
+  @apply grid gap-8 sm:grid-cols-3 lg:grid-cols-3;
+}
+
+/* Card styling for each project */
+.project-card {
+  @apply p-6 bg-white/50 shadow-lg rounded-lg border border-gray-200;
+  transition: transform 0.3s ease-in-out;
+}
+.project-card:hover {
+  @apply transform scale-105;
+}
+
+/* Project name styling */
+.project-name {
+  @apply text-xl font-semibold text-gray-800 mb-2;
+}
+
+/* Project description styling */
+.project-description {
+  @apply text-gray-700 mb-4 line-clamp-3 text-xs;
+}
+
+/* Language bar container */
+.language-bar {
+  @apply flex w-full h-4 rounded-lg overflow-hidden mb-4 border border-gray-300;
+}
+
+/* Each language segment within the bar */
+.language-segment {
+  @apply relative h-full;
+}
+
+/* Container for project topics */
+.project-topics {
+  @apply flex flex-wrap gap-2 mb-4;
+}
+
+/* Individual topic item styling */
+.project-topic {
+  @apply bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs font-medium;
+}
+
+/* Project link button styling */
+.project-link {
+  @apply inline-block text-blue-500 hover:text-blue-700 font-semibold mt-4;
+}
+
+/* Embedded Game Iframe */
+iframe {
+  @apply w-screen h-screen;
 }

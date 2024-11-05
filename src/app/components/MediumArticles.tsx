@@ -58,11 +58,11 @@ export default function MediumArticles() {
   };
 
   return (
-    <section className="p-8 component bg-gradient">
-      <h2 className="text-3xl mb-4">Medium Articles</h2>
+    <section>
+      <h2>Medium Articles</h2>
 
       {articles.length > 0 ? (
-        <div className="relative w-full max-w-lg mx-auto overflow-hidden blur-effect p-6 bg-white shadow-md rounded-lg">
+        <div className='article-slider'>
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{
@@ -75,27 +75,23 @@ export default function MediumArticles() {
               return (
                 <div
                   key={index}
-                  className="article-card w-full flex-shrink-0 p-6 shadow-md rounded-lg bg-white transition duration-500"
-                  style={{
-                    minHeight: '300px',
-                    maxWidth: '100%',
-                  }}
+                  className="article-card"
                 >
                   {imgSrc && (
                     <img
                       src={imgSrc}
                       alt={article.title}
-                      className="w-full h-48 object-cover rounded mb-4"
+                      className="article-image"
                     />
                   )}
-                  <h3 className="text-2xl font-semibold mb-2">{article.title}</h3>
-                  <p className="text-sm text-gray-500 mb-2">{new Date(article.pubDate).toDateString()}</p>
-                  <p className="text-gray-700 mb-4">{textContent.slice(0, 150)}...</p>
+                  <h3 className="article-title">{article.title}</h3>
+                  <p className="article-date">{new Date(article.pubDate).toDateString()}</p>
+                  <p className="article-text">{textContent.slice(0, 150)}...</p>
                   <a
                     href={article.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500 hover:underline"
+                    className="article-link"
                   >
                     Read more
                   </a>
@@ -105,16 +101,17 @@ export default function MediumArticles() {
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex justify-between mt-6">
+          <div className="flex justify-between items-center mt-6">
             <button
               onClick={handlePrevious}
-              className="px-4 py-2 bg-gray-300 rounded-full hover:bg-gray-400 transition"
             >
               Previous
             </button>
+            <span className="article-counter">
+              {currentIndex + 1}/{articles.length}
+            </span>
             <button
               onClick={handleNext}
-              className="px-4 py-2 bg-gray-300 rounded-full hover:bg-gray-400 transition"
             >
               Next
             </button>

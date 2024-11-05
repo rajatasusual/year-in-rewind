@@ -2,7 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import CalendarHeatmap from 'react-calendar-heatmap';
+import CalendarHeatmap, { TooltipDataAttrs } from 'react-calendar-heatmap';
 
 interface Contribution {
   date: Date;
@@ -41,25 +41,25 @@ export default function GitHubContributions() {
   }, []);
 
   return (
-    <section className="p-8 component bg-gradient">
-      <h2 className="text-3xl mb-4">GitHub Contributions</h2>
-      <div className="relative w-full max-w-lg mx-auto overflow-hidden blur-effect p-6 bg-white shadow-md rounded-lg">
-        <h1>Here's my year from the lens of the code I wrote:</h1>
+    <section>
+      <h2>GitHub Contributions</h2>
+      <div className="github-card">
+        <h3 className="github-title">Here is my year from the lens of the code I wrote:</h3>
         <br />
         <CalendarHeatmap
           startDate={startDate}
           endDate={today}
           values={contributions}
-          classForValue={(value: { count: number; }) => {
-            if (!value) return 'color-empty';
-            return `color-github-${Math.min(value.count, 4)}`; // assuming 4 is the max level for color
+          classForValue={(value) => {
+            if (!value || !value.count) return 'color-empty';
+            return `color-github-${Math.min(value.count, 4)}`;
           }}
           showWeekdayLabels={true}
-          tooltipDataAttrs={(value: { date: { toDateString: () => any; }; count: any; }) => {
-            if (!value.date) return { 'data-tip': 'No contributions' };
+          tooltipDataAttrs={(value) => {
+            if (!value || !value.date) return { 'data-tip': 'No contributions' } as TooltipDataAttrs;
             return {
               'data-tip': `${value.date.toDateString()}: ${value.count} contributions`,
-            };
+            } as TooltipDataAttrs;
           }}
         />
       </div>

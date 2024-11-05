@@ -14,12 +14,13 @@
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-calendar-heatmap": "^1.9.0",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
-    "react-tsparticles": "^2.9.3",
-    "tsparticles": "^2.9.3"
+    "react-tsparticles": "2.9.3",
+    "tsparticles": "2.9.3"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
+    "@types/react-calendar-heatmap": "^1.9.0",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.20",
     "eslint": "^8",

@@ -1,0 +1,122 @@
+[
+  {
+    "name": "gemini-mud",
+    "html_url": "https://github.com/rajatasusual/gemini-mud",
+    "description": "A Text-Based Adventure Game with AI-Generated Worlds  Gemini MUD is a text-based Multi-User Dungeon (MUD) game that leverages AI to procedurally generate unique stages, complete with immersive music and ambience.",
+    "created_at": "2024-08-05T01:21:46Z",
+    "languages": {
+      "JavaScript": "91.20%",
+      "CSS": "6.06%",
+      "HTML": "2.74%"
+    },
+    "topics": [
+      "ai",
+      "gaming",
+      "gemini-api",
+      "generative-ai",
+      "llm",
+      "mud",
+      "procedural-generation",
+      "text-based-game"
+    ]
+  },
+  {
+    "name": "go-github",
+    "html_url": "https://github.com/rajatasusual/go-github",
+    "description": "Go-Github is a Golang-based project that retrieves and displays GitHub user profiles, commit histories, and statistics. It combines templated HTML with Chart.js for visualizations and supports multiple database connectors: a local SQLite database and a managed Xata database.",
+    "created_at": "2024-11-01T12:25:58Z",
+    "languages": {
+      "Go": "68.68%",
+      "templ": "26.46%",
+      "Dockerfile": "3.63%",
+      "Shell": "1.24%"
+    },
+    "topics": [
+      "api-client",
+      "gin-gonic",
+      "github",
+      "golang",
+      "htmx-go",
+      "sqlite",
+      "templ",
+      "xata-io"
+    ]
+  },
+  {
+    "name": "llama-turing",
+    "html_url": "https://github.com/rajatasusual/llama-turing",
+    "description": "A fun take on a famous experiment, the Turing Test, and with a similar objective - how test how smart ( or deceptive) a machine is. The game is played between three computer agents - three Language Models. The objective for them is to convince the other two agents that you are a machine. There are penalties, judgement and bonkers fun.",
+    "created_at": "2024-07-27T21:23:18Z",
+    "languages": {
+      "JavaScript": "85.62%",
+      "CSS": "10.40%",
+      "HTML": "3.98%"
+    },
+    "topics": ["ai", "gemma-2b", "llm", "ollama", "turing-test", "generative-ai"]
+  },
+  {
+    "name": "llamapp",
+    "html_url": "https://github.com/rajatasusual/llamapp",
+    "description": "A Retrieval Augmented Generator (RAG) that operates entirely locally, combining document retrieval and language model generation to provide accurate and contextually relevant responses. Built with @Langchain-ai",
+    "created_at": "2024-07-04T18:32:18Z",
+    "languages": {
+      "TypeScript": "100.00%"
+    },
+    "topics": [
+      "ai",
+      "chain",
+      "embeddings",
+      "gemma-2b",
+      "langchain",
+      "langchain-js",
+      "llm",
+      "ollama",
+      "rag",
+      "redis",
+      "vector-database"
+    ]
+  },
+  {
+    "name": "neural-net-gates",
+    "html_url": "https://github.com/rajatasusual/neural-net-gates",
+    "description": "Neural Network for Logic Gates This Rust project implements a neural network from scratch to solve basic logic gates problems. It covers seven logic gates: AND, OR, XOR, NOT, NAND, NOR, and XNOR. The project includes custom implementations for matrix operations, activation functions, and neural network training. ",
+    "created_at": "2024-09-02T20:56:11Z",
+    "languages": {
+      "Rust": "100.00%"
+    },
+    "topics": [
+      "backpropagation",
+      "data-science",
+      "deep-learning",
+      "logic-gates",
+      "machine-learning",
+      "matrix-calculations",
+      "neural-network",
+      "rust"
+    ]
+  },
+  {
+    "name": "realtime-vector-embeddings",
+    "html_url": "https://github.com/rajatasusual/realtime-vector-embeddings",
+    "description": "This project is created to understand how similar different pieces of text are in a multi-dimensional space. This is a crucial concept in Natural Language Processing (NLP) tasks such as text classification, clustering, and recommendation systems.",
+    "created_at": "2024-07-20T00:02:20Z",
+    "languages": {
+      "JavaScript": "39.45%",
+      "TypeScript": "21.44%",
+      "HTML": "20.97%",
+      "CSS": "18.15%"
+    },
+    "topics": [
+      "ai",
+      "embeddings",
+      "gpt",
+      "graph-algorithms",
+      "mathematics",
+      "neural-network",
+      "ollama",
+      "plotly",
+      "rag",
+      "vector-database"
+    ]
+  }
+]

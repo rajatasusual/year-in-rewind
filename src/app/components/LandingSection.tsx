@@ -16,9 +16,8 @@ export default function LandingSection() {
   return (
     <section
       ref={landingRef}
-      className="h-screen flex items-center justify-center bg-gradient bg-gradient-to-r from-blue-500 to-green-500 text-white text-4xl component"
     >
-      <div className="blur-effect p-8">
+      <div>
         <h1>Welcome to My Year in Review</h1>
       </div>
     </section>

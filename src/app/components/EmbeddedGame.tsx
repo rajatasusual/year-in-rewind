@@ -3,12 +3,15 @@
 // src/app/components/EmbeddedGame.tsx
 export default function EmbeddedGame() {
   return (
-    <section className="p-8 component bg-gradient">
-      <h2 className="text-3xl mb-4">Z</h2>
-      <div className="blur-effect p-4">
+    <section >
+      <h2>Few Games I Created</h2>
+      <div>
         <iframe
           src="https://rajatasusual.github.io/z-game"
-          className="w-full h-screen"
+          title="Embedded Game"
+        ></iframe>
+        <iframe
+          src="https://rajatasusual.github.io/gemini-mud"
           title="Embedded Game"
         ></iframe>
       </div>

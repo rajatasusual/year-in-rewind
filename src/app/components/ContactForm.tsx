@@ -3,7 +3,7 @@
 // src/app/components/ContactForm.tsx
 export default function ContactForm() {
   return (
-    <section className="p-8 component bg-gradient">
+    <section className="p-8 component">
       <h2 className="text-3xl mb-4">Contact Me</h2>
       <form className="bg-white shadow-md p-6 blur-effect space-y-4" method="POST" data-netlify="true">
         <input

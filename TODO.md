@@ -1,0 +1,6 @@
+- Snap scrolling
+- Horizontal scrolling
+- Narration for each section
+- Branding
+- Footer
+- Responsive design
