@@ -2,14 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+ /* tailwind.css */
+ @layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 html, body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overscroll-behavior-x: none;
+  overflow-x: scroll;
 }
 
 section {
-  @apply min-h-screen w-screen flex flex-col items-center justify-center p-16;
+  @apply min-h-screen w-screen flex flex-col items-center justify-center;
 }
 
 h2 {
@@ -40,12 +53,14 @@ button {
  * Article styles
  */
 
+
+
 .article-slider {
-  @apply w-full max-w-lg mx-auto overflow-hidden p-6 bg-white/50 shadow-md rounded-lg;
+  @apply w-full p-6 bg-white/50 shadow-md rounded-lg flex space-x-6 scrollbar-hide overflow-x-scroll;
 }
 
 .article-card {
-  @apply flex-shrink-0 w-full p-6 shadow-md rounded-lg bg-transparent transition duration-500;
+  @apply flex-shrink-0 w-1/3 p-6 shadow-md rounded-lg bg-transparent transition duration-500;
 }
 
 .article-image {
