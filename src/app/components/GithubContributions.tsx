@@ -1,8 +1,8 @@
 // src/app/components/GitHubContributions.tsx
-"use client";
 
 import { useEffect, useState } from "react";
-import CalendarHeatmap, { TooltipDataAttrs } from 'react-calendar-heatmap';
+import CalendarHeatmap, { TooltipDataAttrs } from "react-calendar-heatmap";
+import { FaCalendarAlt, FaCode, FaProjectDiagram } from "react-icons/fa";
 
 interface Contribution {
   date: Date;
@@ -13,9 +13,11 @@ interface Contribution {
 const startDate = new Date('2024-01-01');
 const today = new Date();
 
-
 export default function GitHubContributions() {
   const [contributions, setContributions] = useState<Contribution[]>([]);
+  const [totalContributions, setTotalContributions] = useState(0);
+  const [topRepoContributions, setTopRepoContributions] = useState<string[]>([]);
+  const [monthlyContributions, setMonthlyContributions] = useState<number[]>([]);
 
   useEffect(() => {
     async function fetchGithubContributions() {
@@ -31,7 +33,16 @@ export default function GitHubContributions() {
           })
         );
 
+        const total = contributions.reduce((acc, curr) => acc + curr.count, 0);
+        const monthly = Array(12).fill(0);
+        contributions.forEach((c) => monthly[c.date.getMonth()] += c.count);
+
+        const topRepos = (await (await fetch('/projects.json')).json()).slice(1, 4).map((repo: any) => repo.name);
+
         setContributions(contributions);
+        setTotalContributions(total);
+        setMonthlyContributions(monthly);
+        setTopRepoContributions(topRepos);
       } catch (error) {
         console.error('Failed to fetch Contributions:', error);
       }
@@ -43,9 +54,24 @@ export default function GitHubContributions() {
   return (
     <section>
       <h2>GitHub Contributions</h2>
+      <div className="github-contributions">
+        {/* Contribution Summary */}
+        <div className="gh-contribution">
+          <FaCode className="gh-icon" />
+          <span className="gh-text"><b>Total Contributions: </b>{totalContributions}</span>
+        </div>
+        <div className="gh-contribution">
+          <FaCalendarAlt className="gh-icon" />
+          <span className="gh-text"><b>Busiest Month: </b>{Math.max(...monthlyContributions)}</span>
+        </div>
+        <div className="gh-contribution">
+          <FaProjectDiagram className="gh-icon" />
+          <span className="gh-text"><b>Top Projects: </b>{topRepoContributions.join(', ')}</span>
+        </div>
+      </div>
+
+      {/* Calendar Heatmap */}
       <div className="github-card">
-        <h3 className="github-title">Here is my year from the lens of the code I wrote:</h3>
-        <br />
         <CalendarHeatmap
           startDate={startDate}
           endDate={today}

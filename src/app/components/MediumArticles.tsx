@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa';
 
 interface Article {
   title: string;
