@@ -67,7 +67,7 @@ button {
 }
 
 .article-card {
-  @apply flex-shrink-0 md:w-1/4 sm:w-screen p-6 shadow-md rounded-lg transition duration-500 border-2 border-accent-1 hover:scale-110 transition duration-500 ease-in-out;
+  @apply md:flex-shrink-0 md:w-1/4 sm:w-screen sm:w-screen p-6 shadow-md rounded-lg transition duration-500 border-2 border-accent-1 md:hover:scale-110 transition duration-500 ease-in-out;
 }
 
 .article-image {
@@ -115,7 +115,7 @@ button {
 }
 
 .github-card {
-  @apply flex-shrink-0 md:w-1/2 sm:w-screen p-6 shadow-md rounded-lg transition duration-500 border-2 border-accent-1;
+  @apply md:w-1/2 sm:w-screen p-6 shadow-md rounded-lg transition duration-500 border-2 border-accent-1;
 }
 
  .react-calendar-heatmap text {
@@ -149,25 +149,31 @@ button {
  */
 
 .react-calendar-heatmap .color-github-0 {
-  fill: var(--accent-1);
-  opacity: 0.5;
+  fill: var(--accent-3);
+  opacity: 0.20;
 }
 .react-calendar-heatmap .color-github-1 {
-  fill: var(--accent-2);
-  opacity: 0.5;
+  fill: var(--accent-1);
+  opacity: 0.40;
 }
 .react-calendar-heatmap .color-github-2 {
-  fill: var(--accent-3);
+  fill: var(--accent-1);
+  opacity: 0.60;
 }
 .react-calendar-heatmap .color-github-3 {
-  fill: var(--accent-4);
+  fill: var(--accent-1);
+  opacity: 0.80;
 }
 .react-calendar-heatmap .color-github-4 {
   fill: var(--accent-1);
 }
 
+/*
+ * Project styles
+*/
+
 .project-grid {
-  @apply grid gap-8 sm:grid-cols-3 p-8;
+  @apply grid gap-8 md:grid-cols-3 sm:grid-cols-1 p-8;
 }
 
 .project-card {

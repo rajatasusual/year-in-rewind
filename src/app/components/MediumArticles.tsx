@@ -36,7 +36,9 @@ export default function MediumArticles() {
     const imgElement = doc.querySelector('img');
     const imgSrc = imgElement ? imgElement.getAttribute('src') : '';
     const textContent = doc.body.textContent || '';
-    const cleanedText = textContent.replace(/Continue reading.*/, '');
+    const cleanedText = textContent
+      .replace(/<[^>]*>/g, '') // remove all html tags
+      .replace(/https?:\/\/[^ ]+/g, ''); // remove all links
     return { imgSrc, textContent: cleanedText };
   };
 

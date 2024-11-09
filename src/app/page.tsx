@@ -23,10 +23,10 @@ export default function Home() {
       <div id="github-contributions" className="snap-center component h-screen">
         <GitHubContributions />
       </div>
-      <div id="focus-projects" className="snap-center component h-screen">
+      <div id="focus-projects" className="snap-start component">
         <FocusProjects />
       </div>
-      <div id="embedded-game" className="snap-center component h-screen">
+      <div id="embedded-game" className="snap-start component">
         <EmbeddedGame />
       </div>
       <div id="contact-form" className="snap-center component h-screen">
