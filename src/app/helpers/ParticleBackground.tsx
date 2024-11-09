@@ -1,6 +1,3 @@
-// src/app/components/ParticleBackground.tsx
-"use client";
-
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
@@ -17,9 +14,7 @@ export default function ParticleBackground() {
       init={particlesInit}
       options={{
         fullScreen: { enable: false },
-        background: {
-          color: { value: "transparent" },
-        },
+        background: { color: { value: "transparent" } },
         particles: {
           number: { value: 50 },
           color: { value: "#ffffff" },
@@ -39,14 +34,7 @@ export default function ParticleBackground() {
           },
         },
         interactivity: {
-          events: {
-            onHover: { enable: true, mode: "repulse" },
-            onClick: { enable: true, mode: "push" },
-          },
-          modes: {
-            repulse: { distance: 100, duration: 0.4 },
-            push: { quantity: 4 },
-          },
+          events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" } },
         },
         retina_detect: true,
       }}

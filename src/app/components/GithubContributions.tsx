@@ -10,6 +10,15 @@ interface Contribution {
   level: number;
 }
 
+interface Project {
+  name: string;
+  html_url: string;
+  description: string;
+  created_at: string;
+  languages: Record<string, string>;
+  topics: string[];
+}
+
 const startDate = new Date('2024-01-01');
 const today = new Date();
 
@@ -37,7 +46,7 @@ export default function GitHubContributions() {
         const monthly = Array(12).fill(0);
         contributions.forEach((c) => monthly[c.date.getMonth()] += c.count);
 
-        const topRepos = (await (await fetch('/projects.json')).json()).slice(1, 4).map((repo: any) => repo.name);
+        const topRepos = (await (await fetch('/projects.json')).json()).slice(1, 4).map((repo: Project) => repo.name);
 
         setContributions(contributions);
         setTotalContributions(total);

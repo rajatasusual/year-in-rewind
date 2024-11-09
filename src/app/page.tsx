@@ -7,11 +7,13 @@ import GitHubContributions from './components/GithubContributions';
 import FocusProjects from './components/FocusProjects';
 import EmbeddedGame from './components/EmbeddedGame';
 import ContactForm from './components/ContactForm';
+import ParticleBackground from './helpers/ParticleBackground';
 
 export default function Home() {
   return (
     
     <div className="snap-mandatory snap-y snap-center h-screen overflow-y-scroll">
+      <ParticleBackground />
       <div id="landing-section" className="snap-center component h-screen">
         <LandingSection />
       </div>
