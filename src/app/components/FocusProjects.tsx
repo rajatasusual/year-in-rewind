@@ -27,7 +27,7 @@ export default function FocusProjects() {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const response = await fetch("/projects.json");
+        const response = await fetch("projects.json");
         const data = await response.json();
         setProjects(data.slice(0, 6)); // Limit to 6 projects
       } catch (error) {

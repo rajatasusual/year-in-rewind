@@ -31,7 +31,7 @@ export default function GitHubContributions() {
   useEffect(() => {
     async function fetchGithubContributions() {
       try {
-        const response = await fetch('/contributions.json');
+        const response = await fetch('contributions.json');
         const data = await response.json();
 
         const contributions: Contribution[] = data.contributions.map(
@@ -46,7 +46,7 @@ export default function GitHubContributions() {
         const monthly = Array(12).fill(0);
         contributions.forEach((c) => monthly[c.date.getMonth()] += c.count);
 
-        const topRepos = (await (await fetch('/projects.json')).json()).slice(1, 4).map((repo: Project) => repo.name);
+        const topRepos = (await (await fetch('projects.json')).json()).slice(1, 4).map((repo: Project) => repo.name);
 
         setContributions(contributions);
         setTotalContributions(total);
