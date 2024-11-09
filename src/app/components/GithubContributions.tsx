@@ -89,7 +89,8 @@ export default function GitHubContributions() {
             if (!value || !value.count) return 'color-empty';
             return `color-github-${Math.min(value.count, 4)}`;
           }}
-          showWeekdayLabels={true}
+          showWeekdayLabels={false}
+          showMonthLabels={false}
           tooltipDataAttrs={(value) => {
             if (!value || !value.date) return { 'data-tip': 'No contributions' } as TooltipDataAttrs;
             return {

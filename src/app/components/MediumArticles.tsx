@@ -1,7 +1,9 @@
 // src/app/components/MediumArticles.tsx
 "use client";
 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 interface Article {
   title: string;
@@ -53,13 +55,25 @@ export default function MediumArticles() {
                 className="snap-center article-card"
               >
                 {imgSrc && (
-                  <img
+                  <Image
                     src={imgSrc}
                     alt={article.title}
                     className="article-image"
+                    width={150}
+                    height={75}
+                    placeholder='blur'
+                    priority
+                    blurDataURL='data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7'
                   />
                 )}
-                <h3 className="article-title">{article.title}</h3>
+                <h3 className="article-title"><a
+                  href={article.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="article-link"
+                >
+                  {article.title}
+                </a></h3>
                 <p className="article-date">{new Date(article.pubDate).toDateString()}</p>
                 <p className="article-text">{textContent.slice(0, 150)}...</p>
                 <a
@@ -77,6 +91,12 @@ export default function MediumArticles() {
       ) : (
         <p>Loading articles...</p>
       )}
+
+      <div className="article-controls">
+
+        <FaArrowLeft className="scroll-arrow animate-ping" />
+        <FaArrowRight className="scroll-arrow animate-ping" />
+      </div>
     </section>
   );
 }

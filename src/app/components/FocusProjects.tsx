@@ -29,6 +29,9 @@ export default function FocusProjects() {
       try {
         const response = await fetch("projects.json");
         const data = await response.json();
+        data.slice(0, 6).forEach((project: Project) => {
+          project.topics = project.topics.slice(0, 5);
+        });
         setProjects(data.slice(0, 6)); // Limit to 6 projects
       } catch (error) {
         console.error("Failed to fetch projects:", error);
@@ -38,8 +41,8 @@ export default function FocusProjects() {
   }, []);
 
   return (
-    <section className="projects-container">
-      <h2 className="projects-title">My Projects</h2>
+    <section>
+      <h2>My Projects</h2>
       <div className="project-grid">
         {projects.map((project, index) => (
           <div key={index} className="project-card">

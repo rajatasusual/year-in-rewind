@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   distDir: 'dist',
   trailingSlash: false,
   assetPrefix: '.',
+  images: {
+    unoptimized: true
+  }
 };
 
 export default nextConfig;
